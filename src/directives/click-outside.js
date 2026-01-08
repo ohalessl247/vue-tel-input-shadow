@@ -11,8 +11,8 @@ export default {
       console.warn(warn);
     }
     el.clickOutsideEvent = function (event) {
-      const path = event.composedPath ? event.composedPath() : event.path;
-      if (!(el === event.target || el.contains(event.target) || path.includes(el))) {
+     const path = event.composedPath ? event.composedPath() : [];
+     if (!path.includes(el)) {
         binding.value(event, el);
       }
     };
